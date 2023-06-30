@@ -1,0 +1,11 @@
+﻿No,Logo,"Company Name",Phone,Category,Status,Plan,Service,Project,Product,Action
+1,,"Amenity Design Group Pte.Ltd view dashboard","01 504 076",Service,Active,Gold,Services,Projects,,"Buy Coin"
+2,,"မြန်ဘောက် view dashboard",09123456,Service,Active,Gold,Services,Projects,,"Buy Coin"
+3,,"B Service Free 3 view dashboard",094227890,Service,Inactive,Free,Services,Projects,,"Buy Coin"
+4,,"Ceil Service Free 4 view dashboard",094227890,Service,Inactive,Free,Services,Projects,,"Buy Coin"
+5,,"Service Free 5 view dashboard",094227890,Service,Active,Free,Services,Projects,,"Buy Coin"
+6,,"Service Gold 1 view dashboard",094227890,Service,Active,Gold,Services,Projects,,"Buy Coin"
+7,,"Service Gold 2 view dashboard",094227890,Service,Active,Gold,Services,Projects,,"Buy Coin"
+8,,"Service Gold 3 view dashboard",094227890,Service,Active,Gold,Services,Projects,,"Buy Coin"
+9,,"Service Gold 4 view dashboard",094227890,Service,Active,Gold,Services,Projects,,"Buy Coin"
+10,,"Service Gold 5 view dashboard",094227890,Service,Active,Gold,Services,Projects,,"Buy Coin"

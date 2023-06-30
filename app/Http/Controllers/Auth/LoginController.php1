@@ -1,0 +1,76 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Auth;
+use Response;
+use Session;
+use App\Company;
+use App\ProjectSetting;
+use DB;
+
+class LoginController extends Controller
+{
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
+    use AuthenticatesUsers;
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+     protected $redirectTo = '/';
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+    public function login(Request $request)
+    {  
+            
+    
+     if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')]))
+     {
+            
+            $role= Auth()->user()->role;
+        if(Auth()->user()->last_login_date != date('Y-m-d')){
+           if($role == 1){
+              $setting=ProjectSetting::select('user_login_coin')->first();
+              $update['coin'] =Auth()->user()->coin+$setting->user_login_coin;
+              $update['left_coin'] =Auth()->user()->left_coin+$setting->user_login_coin;
+           }else if( $role == 2){
+              $setting=ProjectSetting::select('company_login_coin')->first();
+              $update['coin']=Auth()->user()->coin+$setting->company_login_coin;
+              $update['left_coin']=Auth()->user()->left_coin+$setting->company_login_coin;
+           }else if( $role == 3){
+             $update['coin'] =null;
+             $update['left_coin']=null;
+           }
+             $update['last_login_date'] = date('Y-m-d');
+            DB::table('users')->where('id',Auth()->user()->id)->update($update);
+        }
+
+            return response(['success' => true,'message'=>'successfully Logined','role'=>$role]);
+            
+      } else {
+           return response(['success' => false,'message' => 'Email and Password does not match!'
+            ]);
+        }
+    }
+}

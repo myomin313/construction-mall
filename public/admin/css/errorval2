@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+    @import url('https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700');
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800');
+	@import url('font-awesome.css');
+    @import url('animate.css');
+    
+/*.container {
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: left;
+    font-family: sans-serif;
+}*/
+
+.form {
+  /*  border: 1px solid #1A33FF;
+    background: #ecf5fc;*/
+    padding: 40px 50px 45px;
+}
+
+.form-control:focus {
+    border-color: #000;
+    box-shadow: none;
+}
+
+.label {
+    font-weight: 600;
+}
+
+ 
+  .error {
+    border-color: red; 
+    font-weight: 400;
+    display: block;
+    padding: 6px 0;
+    font-size: 14px;
+} 
+
+ 
+
+/* .form-control.error {
+    border-color: red;
+    padding: .375rem .75rem;
+}*/ 
+
+/*.input-field.error {
+    border-color: red;
+    padding: .375rem .75rem;
+}*/
+
+ /*.validation.error {
+    border-color:red;
+     position:relative;
+} */
+
+/*.form-group{
+    margin-bottom:25px;
+}*/
